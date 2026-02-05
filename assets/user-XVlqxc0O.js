@@ -1,1 +1,0 @@
-import{at as e}from"./index-D6DKEz1o.js";const s=r=>e.post("/user/register",r),a=r=>e.patch("/user/me",r),o=r=>e.get(`/user/profile/${r}`),n=()=>e.get("/user/dashboard");export{n as a,o as g,s as r,a as u};
