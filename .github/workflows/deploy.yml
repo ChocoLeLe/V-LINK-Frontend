@@ -21,8 +21,6 @@ jobs:
         run: |
           npm install
           npm run build
-          # 建立 .nojekyll 檔案以確保 GitHub Pages 不會忽略底線開頭的檔案
-          touch dist/spa/.nojekyll
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
       # 步驟三：部署
