@@ -3,7 +3,7 @@ name: Deploy
 # 觸發時機，當推送到分支 master 時
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 # 執行的工作
 jobs:
   # 工作名稱
@@ -21,6 +21,8 @@ jobs:
         run: |
           npm install
           npm run build
+          # 建立 .nojekyll 檔案以確保 GitHub Pages 不會忽略底線開頭的檔案
+          touch dist/spa/.nojekyll
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
       # 步驟三：部署

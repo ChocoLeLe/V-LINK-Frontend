@@ -1,6 +1,6 @@
 import { defineConfig } from '#q-app/wrappers'
 
-export default defineConfig((/* ctx */) => {
+export default defineConfig((ctx) => {
   return {
     // app boot file (/src/boot)
     boot: ['axios'],
@@ -16,7 +16,7 @@ export default defineConfig((/* ctx */) => {
       },
 
       vueRouterMode: 'hash',
-      publicPath: './',
+      publicPath: ctx.prod ? '/V-LINK-Frontend/' : '/',
 
       vitePlugins: [
         [
