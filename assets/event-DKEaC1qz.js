@@ -1,1 +1,0 @@
-import{at as t}from"./index-er4aaVKx.js";const a=e=>t.get("/event",{params:e}),o=()=>t.get("/event/all"),v=e=>t.get(`/event/${e}?t=${new Date().getTime()}`),c=(e,n)=>t.post("/application",{event:e,note:n}),r=e=>t.post("/event",e),p=(e,n)=>t.patch(`/event/${e}`,n),g=e=>t.delete(`/event/${e}`);export{v as a,o as b,r as c,g as d,a as g,c as j,p as u};
