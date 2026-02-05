@@ -16,7 +16,7 @@ export default defineConfig((/* ctx */) => {
       },
 
       vueRouterMode: 'hash',
-      publicPath: '',
+      publicPath: '/V-LINK-Frontend/',
 
       vitePlugins: [
         [
