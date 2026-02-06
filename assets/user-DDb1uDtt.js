@@ -1,0 +1,1 @@
+import{as as e}from"./index-CNmdPO40.js";const t=r=>e.post("/user/register",r),a=r=>e.patch("/user/me",r),o=r=>e.get(`/user/profile/${r}`),n=()=>e.get("/user/dashboard");export{n as a,o as g,t as r,a as u};

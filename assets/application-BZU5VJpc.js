@@ -1,0 +1,1 @@
+import{as as a}from"./index-CNmdPO40.js";const p=()=>a.get("/application"),c=t=>a.delete(`/application/${t}`),n=t=>a.get(`/application/event/${t}`),s=(t,i)=>a.patch(`/application/${t}`,i),e=()=>a.get("/application/notifications"),l=t=>a.patch(`/application/notifications/${t}`,{isRead:!0});export{p as a,n as b,c,e as g,l as m,s as u};
