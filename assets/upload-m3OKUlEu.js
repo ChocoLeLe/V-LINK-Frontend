@@ -1,1 +1,0 @@
-import{as as e}from"./index-CNmdPO40.js";const o=()=>e.get("/system/category"),r=()=>e.get("/system/skill"),n=()=>e.get("/system/volunteerType"),g=()=>e.get("/system/serviceSlot"),l=s=>{const t=new FormData;return t.append("file",s),e.post("/user/upload",t,{headers:{"Content-Type":"multipart/form-data"}})};export{o as a,n as b,g as c,r as g,l as u};
