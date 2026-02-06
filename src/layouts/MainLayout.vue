@@ -2,7 +2,7 @@
   <q-layout view="hHh Lpr lff">
     <q-header elevated :class="headerClass" style="z-index: 4000">
       <q-toolbar>
-        <!-- 漢堡選單：小尺寸螢幕顯示 (lt-md)，大尺寸隱藏 -->
+        <!-- 漢堡選單：只在後台模式且螢幕較窄時顯示 (lt-md) -->
         <q-btn flat dense round icon="menu" class="lt-md q-mr-sm" @click="toggleLeftDrawer()" />
 
         <q-toolbar-title class="text-bold ellipsis row items-center q-pl-none">
@@ -348,7 +348,11 @@ watch(
 
 // 監聽後台模式切換，確保進入後台時手機版側邊欄預設關閉 (防止殘留狀態)
 watch(isBackend, (val) => {
-  if (val && $q.screen.lt.md) {
+  if (val) {
+    // 進入後台：電腦版自動展開，手機版預設收合
+    leftDrawerOpen.value = $q.screen.gt.sm
+  } else {
+    // 離開後台：強制收合
     leftDrawerOpen.value = false
   }
 })
