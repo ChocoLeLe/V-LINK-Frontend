@@ -2,16 +2,8 @@
   <q-layout view="hHh Lpr lff">
     <q-header elevated :class="headerClass" style="z-index: 4000">
       <q-toolbar>
-        <!-- 漢堡選單：只在後台模式且螢幕較窄時顯示 (lt-md) -->
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          class="lt-md q-mr-sm"
-          :style="{ visibility: isBackend ? 'visible' : 'hidden' }"
-          @click="isBackend && toggleLeftDrawer()"
-        />
+        <!-- 漢堡選單：小尺寸螢幕顯示 (lt-md)，大尺寸隱藏 -->
+        <q-btn flat dense round icon="menu" class="lt-md q-mr-sm" @click="toggleLeftDrawer()" />
 
         <q-toolbar-title class="text-bold ellipsis row items-center q-pl-none">
           <div class="row no-wrap items-center">
@@ -46,10 +38,7 @@
         <q-space />
 
         <!-- 前台導航連結：直接顯示在 Navbar -->
-        <div
-          v-if="!isBackend && route.path !== '/events'"
-          class="row items-center q-gutter-sm q-mr-md"
-        >
+        <div v-if="!isBackend" class="row items-center q-gutter-sm q-mr-md gt-sm">
           <q-btn flat label="活動探索" to="/events" />
         </div>
 
@@ -121,7 +110,7 @@
     </q-header>
 
     <!-- 側邊欄：只在後台模式顯示 -->
-    <q-drawer v-if="isBackend" v-model="leftDrawerOpen" show-if-above bordered class="bg-grey-1">
+    <q-drawer v-model="leftDrawerOpen" :show-if-above="isBackend" bordered class="bg-grey-1">
       <q-list>
         <q-item-label header>平台導覽</q-item-label>
         <q-item clickable v-ripple to="/">
